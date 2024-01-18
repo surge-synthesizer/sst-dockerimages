@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 ENV LANG C.UTF-8
 
 ARG JOBS
@@ -73,10 +73,10 @@ RUN apt-get install -y \
 # Switch back go the user space user and build the toolchain
 USER build
 WORKDIR /home/build/arm-toolchain
-COPY aarch64-rpi4-linux-gnu-gcc11-glibc231.conf .config
+COPY x64-gcc12-ub1604.config .config
 RUN ct-ng build && rm -rf .build && gzip -9 build.log
 
 # Finally set up the state for the arm build
 RUN mkdir /home/build/dev
 WORKDIR /home/build/dev
-ENV PATH="${PATH}:/home/build/x-tools/aarch64-rpi4-linux-gnu/bin/"
+ENV PATH="${PATH}:/home/build/x-tools/x86_64-ubuntu16.04-linux-gnu/bin/"
