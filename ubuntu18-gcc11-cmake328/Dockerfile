@@ -62,6 +62,10 @@ RUN ./cmake-3.28.1-linux-x86_64.sh --skip-license --prefix=/usr
 
 RUN apt-get install -y rpm
 
+# Finally, pick gcc11
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 11
+
 # Switch back go the user space user and build the toolchain
 USER build
 RUN mkdir /home/build/dev

@@ -47,7 +47,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          file: ubuntu-18-upgrade-cmake/Dockerfile
+          file: ubuntu18-gcc11-cmake328/Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           secrets: |
