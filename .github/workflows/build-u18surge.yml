@@ -43,6 +43,7 @@ jobs:
           echo "labels: ${{ steps.meta.output.labels }}" >> $GITHUB_STEP_SUMMARY
 
       - name: Build and push
+        id: push
         uses: docker/build-push-action@v6
         with:
           push: true
