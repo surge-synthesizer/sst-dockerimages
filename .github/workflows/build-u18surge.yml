@@ -12,10 +12,7 @@ env:
 
 jobs:
   build_image:
-    permissions:
-      id-token: write
-      contents: read
-      attestations: write
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
