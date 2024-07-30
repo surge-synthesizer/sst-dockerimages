@@ -1,0 +1,25 @@
+name: Build Ubuntu18 Image
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build_image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3 
+
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: false
+          file: ubuntu-18-upgrade-cmake/Dockerfile
+          # tags: user/app:latest
