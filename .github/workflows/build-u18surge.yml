@@ -38,6 +38,14 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Display tags
+        run: |
+          echo "## Build Metadata " >> $GITHUB_STEP_SUMMARY
+          echo " " >> $GITHUB_STEP_SUMMARY
+          echo "tags: ${{ steps.meta.outputs.tags }}" >> $GITHUB_STEP_SUMMARY
+          echo "labels: ${{ steps.meta.output.labels }}" >> $GITHUB_STEP_SUMMARY
+	
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
@@ -45,6 +53,8 @@ jobs:
           file: ubuntu-18-upgrade-cmake/Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
