@@ -8,7 +8,7 @@ defaults:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: baconpaul/ubuntu18_surge_builder
+  IMAGE_NAME: baconpaul/ubuntu18_cmake
 
 jobs:
   build_image:
