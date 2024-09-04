@@ -8,10 +8,10 @@ defaults:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: surge-synthesizer/sst-dockerimages/ubuntu20_gcc12
+  IMAGE_NAME: surge-synthesizer/sst-dockerimages/ubuntu20_gcc11
 
 jobs:
-  build_image:
+  build_image_20:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
