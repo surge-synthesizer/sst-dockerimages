@@ -42,6 +42,7 @@ RUN apt-get install -y \
               libasound2-dev \
               libjack-dev \
               libfreetype6-dev \
+              libfontconfig1-dev \
               libxinerama-dev \
               libxcb-xinerama0 \
               libxinerama1 \
