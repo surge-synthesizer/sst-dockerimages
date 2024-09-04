@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 ENV LANG C.UTF-8
 
 ARG JOBS
@@ -41,7 +41,7 @@ RUN apt-get install -y \
               alsa-tools \
               libasound2-dev \
               libjack-dev \
-              libfreetype-dev \
+              libfreetype6-dev \
               libfontconfig1-dev \
               libxinerama-dev \
               libxcb-xinerama0 \
