@@ -69,5 +69,7 @@ RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 12
 
 # Switch back go the user space user and build the toolchain
 USER build
+RUN chmod 777 /home/build
 RUN mkdir /home/build/dev
-WORKDIR /home/build/dev
+RUN mkdir /home/build/plugin
+WORKDIR /home/build/plugin
