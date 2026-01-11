@@ -63,7 +63,7 @@ RUN ./cmake-3.28.1-linux-x86_64.sh --skip-license --prefix=/usr
 
 RUN apt-get install -y rpm
 
-# Finally, pick gcc11
+# Finally, pick gcc12
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 12
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 12
 
